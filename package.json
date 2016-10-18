@@ -1,0 +1,23 @@
+{
+  "name": "tx-kfc",
+  "version": "1.0.0",
+  "description": "a html5 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "wheato",
+  "license": "ISC",
+  "devDependencies": {
+    "imports-loader": "^0.6.5",
+    "style-loader": "^0.13.0",
+    "url-loader": "*",
+    "extract-text-webpack-plugin": "*",
+    "webpack": "^1.12.2"
+  },
+  "dependencies": {
+    "css-loader": "^0.23.1",
+    "less": "^2.7.0",
+    "less-loader": "^2.2.3"
+  }
+}
