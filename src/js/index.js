@@ -46,7 +46,7 @@ var init = function () {
 }
 
 //预播放函数
-var videoPreBegin = function (callback) {
+var videoPrePlay = function (callback) {
 
     _private.video.play();
 
@@ -54,7 +54,7 @@ var videoPreBegin = function (callback) {
     	
 	    if ( this.currentTime > 0 ) {
 
-	        _private.video.setAttribute('width', '375');
+	        _private.video.addClass('playing');
 
 	        callback && callback();
 
@@ -72,7 +72,7 @@ var beginWatch = function () {
 
     // _private.bgmp3[0].pause();
 
-    videoPreBegin(function () {
+    videoPrePlay(function () {
 
         _private.beginPage.css('opacity','0');
 
@@ -80,7 +80,7 @@ var beginWatch = function () {
             _private.beginPage.hide();
         },300)
 
-    	_private.video.addEventListener('timeupdate', showLastPage);
+    	_private.video.addEventListener('ended', showLastPage);
 
     })
 
@@ -88,7 +88,7 @@ var beginWatch = function () {
 
 
 var showLastPage = function (e) {
-    if ( this.currentTime >= 3 ) {
+    // if ( this.currentTime >= 3 ) {
 
     	this.pause();
 
@@ -108,7 +108,7 @@ var showLastPage = function (e) {
         _private.shareWrap.on('touchstart',function (e) {
             $(this).hide();
         })
-    }
+    // }
 }
 
 init();
