@@ -16,8 +16,9 @@ var TD = require('./app/TD');
 *  复制到相应的文件夹
 *  引入的less会对less进行编译存放到css文件夹
 * */
-require('zepto');
-require('../less/style.less');
+
+// require('zepto');
+// require('../less/style.less');
 
 
 //私有变量
@@ -26,7 +27,7 @@ var _private = {};
 	_private.beginPage = $('.m-begin');
 	_private.btnPlay = _private.beginPage.find('.btn-play')
 
-	_private.video = $('.video-wrap #video-main')[0];
+	_private.video = $('.video-wrap .video-main');
 
 	_private.lastPage = $('.m-end');
 	_private.btnSeeAgain = _private.lastPage.find('.btn-seeAgain');
@@ -48,7 +49,7 @@ var init = function () {
 //预播放函数
 var videoPrePlay = function (callback) {
 
-    _private.video.play();
+    _private.video[0].play();
 
     var timeupdateFoo = function () {
     	
@@ -58,12 +59,12 @@ var videoPrePlay = function (callback) {
 
 	        callback && callback();
 
-	        _private.video.removeEventListener('timeupdate', timeupdateFoo);
+	        _private.video.off('timeupdate', timeupdateFoo);
 
 	    }
     	
     }
-    _private.video.addEventListener('timeupdate', timeupdateFoo);
+    _private.video.on('timeupdate', timeupdateFoo);
 
 }
 
@@ -80,7 +81,7 @@ var beginWatch = function () {
             _private.beginPage.hide();
         },300)
 
-    	_private.video.addEventListener('ended', showLastPage);
+    	_private.video.on('ended', showLastPage);
 
     })
 
@@ -98,7 +99,7 @@ var showLastPage = function (e) {
             _private.lastPage.css('opacity','1');
         },0);
 
-        this.removeEventListener('timeupdate', showLastPage)
+        $(this).off('timeupdate', showLastPage)
 
         _private.btnToShare.on("touchstart",function (e) {
             _private.shareWrap.show();
