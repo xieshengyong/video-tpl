@@ -5,7 +5,9 @@ var gulp = require("gulp"),
     cssmin = require("gulp-cssmin"),
     plumer = require("gulp-plumber"),
     webpack = require("webpack"),
-    webpackConfig = require("./webpack.config.js"),
+    webpackConfig = require("./config.js").webpack,
+    browsersync = require("browser-sync"),
+    browsersyncConfig = require("./config.js").browsersync,
     path = require("path");
 
 var lessSrc = './src/less/**/style.less',
@@ -57,6 +59,11 @@ gulp.task("webpack", function(callback) {
     });
 });
 
+//browsersync自动刷新
+gulp.task("browsersync",function () {
+    browsersync(browsersyncConfig);
+})
+
 //压缩less
 gulp.task('lessmin', function () {
     return gulp.src(lessSrc)
@@ -89,7 +96,7 @@ gulp.task("webpack:build", function(callback) {
 });
 
 //默认侦听
-gulp.task('default', ['images', 'less', 'webpack', 'media'], function() {
+gulp.task('default', ['images', 'less', 'webpack', 'media','browsersync'], function() {
 
     gulp.watch(imageSrc, ['images']);
     

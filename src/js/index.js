@@ -5,7 +5,7 @@ var TD = require('./app/TD'),
     Config = require('./app/Config');
     // Preload = require('./app/Preload'),
     // KeyAnimation = require('./app/KeyAnimation'),
-    // MediaSprite = require('./app/MediaSprite'),
+    // MediaSprite = require('./app/MediaSprite');
     // LoadViewController = require('./app/LoadViewController'),
     // IndexViewController = require('./app/IndexViewController');
 
@@ -17,9 +17,7 @@ var TD = require('./app/TD'),
 *  引入的less会对less进行编译存放到css文件夹
 * */
 
-// require('zepto');
-// require('../less/style.less');
-
+require('zepto');
 
 //私有变量
 var _private = {};

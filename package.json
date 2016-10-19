@@ -1,6 +1,7 @@
 {
   "name": "tx-ay",
   "version": "0.0.1",
+  "description": "",
   "devDependencies": {
     "gulp": "*",
     "gulp-copy": "0.0.2",
@@ -15,6 +16,7 @@
     "less": "^2.7.0",
     "style-loader": "^0.13.0",
     "url-loader": "*",
-    "webpack": "^1.12.2"
+    "webpack": "^1.12.2",
+    "browser-sync": "^2.0.0"
   }
 }
