@@ -4,6 +4,9 @@ var Preload = require('./Preload');
 
 var Config = Config || {};
 
+//ajax请求链接
+Config.requireUrl = '';
+
 //默认分享语
 Config.defShare = {
 	title: '分享标题',
@@ -21,7 +24,6 @@ Config.defShare = {
 Config.imgPath = 'img/';
 
 Config.isAndroid = navigator.userAgent.indexOf('Android') > -1;
-
 
 Config.scale = 1;
 

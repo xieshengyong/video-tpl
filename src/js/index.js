@@ -1,8 +1,8 @@
 "use strict";
 
 //引入的包根据实际情况而定
-var TD = require('./app/TD');
-    // Config = require('./app/Config'),
+var TD = require('./app/TD'),
+    Config = require('./app/Config');
     // Preload = require('./app/Preload'),
     // KeyAnimation = require('./app/KeyAnimation'),
     // MediaSprite = require('./app/MediaSprite'),
@@ -37,6 +37,9 @@ var _private = {};
 
 
 var init = function () {
+
+    //初始化微信接口
+    TD.initWxApi(Config.defShare);
 
     $(document.documentElement).on('touchmove', function(e) {
         e.preventDefault();
