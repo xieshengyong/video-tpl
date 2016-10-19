@@ -96,7 +96,7 @@ gulp.task("webpack:build", function(callback) {
 });
 
 //默认侦听
-gulp.task('default', ['images', 'less', 'webpack', 'media','browsersync'], function() {
+gulp.task('default', ['images', 'less', 'webpack', 'media'], function() {
 
     gulp.watch(imageSrc, ['images']);
     
@@ -110,3 +110,7 @@ gulp.task('default', ['images', 'less', 'webpack', 'media','browsersync'], funct
 
 //压缩
 gulp.task('zip', ['images', 'lessmin', 'webpack:build', 'media']);
+
+//自动刷新
+gulp.task('sync', ['images', 'less', 'webpack', 'media','browsersync']);
+
