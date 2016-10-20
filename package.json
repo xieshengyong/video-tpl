@@ -1,7 +1,6 @@
 {
   "name": "tx-ay",
   "version": "0.0.1",
-  "description": "",
   "devDependencies": {
     "gulp": "*",
     "gulp-copy": "0.0.2",

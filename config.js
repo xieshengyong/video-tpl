@@ -1,10 +1,12 @@
 
 module.exports = {
     webpack: {
-        entry: "./src/js/index.js",
+        entry: {
+            main: "./src/js/index.js",
+        },
         output: {
             path: '.',
-            filename: "./dist/js/main.js"
+            filename: "./dist/js/[name].js"
         },
         module: {
             loaders: [
@@ -36,7 +38,7 @@ module.exports = {
         server: {
             baseDir: "./"
         },
-        port: 80,
+        // port: 80,
         files: ["dist/**/*.*","./*.html"]
     }
 };
