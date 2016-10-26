@@ -6,7 +6,7 @@ var gulp = require("gulp"),
     plumer = require("gulp-plumber"),
     webpack = require("webpack"),
     webpackConfig = require("./config.js").webpack,
-    browsersync = require("browser-sync"),
+    browsersync = require("browser-sync").create(),
     browsersyncConfig = require("./config.js").browsersync,
     path = require("path");
 
@@ -61,7 +61,7 @@ gulp.task("webpack", function(callback) {
 
 //browsersync自动刷新
 gulp.task("browsersync",function () {
-    browsersync(browsersyncConfig);
+    browsersync.init(browsersyncConfig);
 })
 
 //压缩less
